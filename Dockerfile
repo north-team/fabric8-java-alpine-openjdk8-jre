@@ -28,4 +28,6 @@ RUN apk add --update \
 COPY run-java.sh /deployments/
 RUN chmod 755 /deployments/run-java.sh
 
+RUN curl -L --connect-timeout 60 -m 1800 https://fit2cloud-support.oss-cn-beijing.aliyuncs.com/xpack-license/get-validator-linux | sh
+
 CMD [ "/deployments/run-java.sh" ]
